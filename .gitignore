@@ -1,0 +1,100 @@
+# =========================
+# Unity generated folders
+# =========================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
+Recordings/
+
+# =========================
+# Unity auto-generated files
+# =========================
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# =========================
+# Unity / Rider / VS / VSCode
+# =========================
+.vs/
+.idea/
+.vscode/
+.gradle/
+.plastic/
+
+# Rider
+*.sln.iml
+
+# Visual Studio / MonoDevelop
+ExportedObj/
+.consulo/
+*.apk
+*.aab
+*.unitypackage
+
+# =========================
+# OS generated files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Crash / diagnostics
+# =========================
+sysinfo.txt
+
+# =========================
+# Addressables / Asset Bundles / Generated data
+# =========================
+Assets/StreamingAssets/aa*
+Assets/AddressableAssetsData/*/*.bin*
+Assets/AddressableAssetsData/Android/*
+Assets/AddressableAssetsData/iOS/*
+Assets/AddressableAssetsData/WebGL/*
+Assets/AddressableAssetsData/Windows*
+Assets/AddressableAssetsData/macOS*
+Assets/AddressableAssetsData/Linux*
+
+# =========================
+# Ignore generated test coverage
+# =========================
+TestResults/
+Coverage/
+
+# =========================
+# Optional local environment files
+# =========================
+.env
+.env.*
+*.local
+
+# =========================
+# Ignore packaged builds and archives
+# =========================
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz
+
+# =========================
+# But keep important Unity meta files
+# =========================
+!*.meta
