@@ -13,6 +13,7 @@ public class SunRise : MonoBehaviour
     public int day_index = 0;
 
     [Header("Ellipse Einstellungen")]
+    public SpriteRenderer sky;
     public Transform orbit_Center;
     public float ellipseWidth = 10f;
     public float ellipseHeight = 5f;
@@ -21,7 +22,11 @@ public class SunRise : MonoBehaviour
     public float dir_z = 0f;
     float currentAngleRad;
     SunRiseState lateState;
-
+    Material sky_mat;
+    private void Start()
+    {
+        sky_mat = sky.material;
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -40,6 +45,19 @@ public class SunRise : MonoBehaviour
         State = curr_State;
 
         MoveSunOnEllipse();
+        SkyMatUpdate();
+    }
+    void SkyMatUpdate()
+    {
+        if(sky_mat == null) return;
+
+        float shader_value = 0;
+        float rawSin = Mathf.Sin(currentAngleRad);
+
+        shader_value = (rawSin + 1) / 2;
+
+        sky_mat.SetFloat("_LerpIndex", shader_value);
+
     }
     void MoveSunOnEllipse()
     {
