@@ -5,7 +5,6 @@ using System.Drawing.Printing;
 public class GitEditor : EditorWindow
 {
     private string commitMessage = "Update vom Unity Editor";
-    string path;
     [MenuItem("Tools/Git Editor")]
     public static void ShowDialog()
     {
