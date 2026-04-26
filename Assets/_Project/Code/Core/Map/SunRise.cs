@@ -5,11 +5,17 @@ public enum SunRiseState
 {
   Day, Night
 }
+public enum  EnemyWave
+{
+    Wave1, Wave2, Wave3
+}
 public class SunRise : MonoBehaviour
 {
     [Header("Einstellungen")]
     public SunRiseState State;
-    public float Speed = 1f;
+    public EnemyWave Wave;
+    public float Day_Speed = 0.05f;
+    public float Night_Speed = 0.2f;
     public int day_index = 0;
 
     [Header("Ellipse Einstellungen")]
@@ -31,14 +37,14 @@ public class SunRise : MonoBehaviour
     void FixedUpdate()
     {
 
-        currentAngleRad += Speed * Time.fixedDeltaTime;
+        currentAngleRad += (State == SunRiseState.Day ? Day_Speed : Night_Speed) * Time.fixedDeltaTime;
         if(currentAngleRad > Mathf.PI * 2) currentAngleRad -= Mathf.PI * 2;
         float raw = currentAngleRad * Mathf.Rad2Deg;
         float raw_rot = raw % 360;
         float raw_rot_360 = raw_rot < 0 ? raw_rot + 360 : raw_rot;
         dir_z = raw_rot_360;
         SunRiseState curr_State = dir_z < 180 ? SunRiseState.Day : SunRiseState.Night;
-
+       
         if(lateState == SunRiseState.Night && curr_State == SunRiseState.Day) day_index++;
 
         lateState = curr_State;
